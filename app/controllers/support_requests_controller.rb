@@ -4,7 +4,7 @@ class SupportRequestsController < ApplicationController
   def index
     # @support_requests = SupportRequest.order("status DESC").all.paginate(page: params[:page], per_page: 5)
     # if params[:search]
-    @support_requests = SupportRequest.order("status DESC").search(params[:keyword]).paginate(page: params[:page], per_page: 5)
+    @support_requests = SupportRequest.order("status DESC").search(params[:keyword]).paginate(page: params[:page], per_page: 6)
     # else
     #   @support_requests = SupportRequest.order("status DESC").all.paginate(page: params[:page], per_page: 5)
   end
@@ -31,6 +31,7 @@ class SupportRequestsController < ApplicationController
 
   def update
     if @support_request.update support_params
+      flash[:notice] = "You have successfully updated your Support Request!"
       redirect_to @support_request
     else
       render :edit
