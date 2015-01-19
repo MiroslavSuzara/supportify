@@ -8,8 +8,10 @@ Rails.application.routes.draw do
   patch "/support_requests/:id" => "support_requests#update"
   patch "/support_requests/done/:id" => "support_requests#done", as: :done_support_request
   delete "/support_requests/:id" => "support_requests#destroy"
+  get "/about" => "about#index"
 
   root "support_requests#index"
+
 end
 
   # The priority is based upon order of creation: first created -> highest priority.

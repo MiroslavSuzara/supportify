@@ -13,7 +13,7 @@
 
 <body>
   <div>
-    <%= render "header" %>
+    <%= render "/layouts/header" %>
       <div class="container">
           <% if flash[:notice] %>
             <%= flash[:notice] %> 
@@ -21,7 +21,7 @@
           <hr>
           <%= yield %>
       </div>
-      <%= render "footer" %>
+      <%= render "layouts/footer" %>
     </div>
  
 
