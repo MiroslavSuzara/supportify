@@ -10,6 +10,7 @@ class SupportRequest < ActiveRecord::Base
     end
   }
 
+  #Makes the search data column
   def set_keywords
     self.keywords = [name, email, message].map(&:downcase).join(" ")
   end

@@ -4,11 +4,11 @@ class SupportRequestsController < ApplicationController
   def index
     # @support_requests = SupportRequest.order("status DESC").all.paginate(page: params[:page], per_page: 5)
     # if params[:search]
-    @support_requests = SupportRequest.order("status DESC").search(params[:keyword]).paginate(page: params[:page], per_page: 6)
+    @support_requests = SupportRequest.order("status ASC").search(params[:keyword]).paginate(page: params[:page], per_page: 6)
     # else
     #   @support_requests = SupportRequest.order("status DESC").all.paginate(page: params[:page], per_page: 5)
   end
-# 
+
   def new
     @support_request = SupportRequest.new
   end

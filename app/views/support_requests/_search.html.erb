@@ -1,4 +1,8 @@
 <%= form_tag(root_path, :method => "get", role: 'search', class: 'navbar-form') do %>
+
+<%# This is another way to do it
+<%= form_tag("/", :method => "get", class: 'navbar-form') do %>
+
   <div class="input-group">
     <%= text_field_tag :keyword, params[:keyword], placeholder: "Search", class:  "form-control" %>
     <div class="input-group-btn">
