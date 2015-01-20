@@ -2,6 +2,7 @@
 <html style="position:relative;min-height:100%;">
 <head>
   <title>Supportify</title>
+  
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -24,17 +25,25 @@
       <%= render "layouts/footer" %>
     </div>
  
-
-
 </body>
 </html>
 
 <script type="text/javascript">
   $(function() {
    $('.navbar .nav > li > a').click(function(e){
-       $('.navbar .nav > li.active').removeClass('active')
-       $(this).parent('li').addClass('active')
+     $('.navbar .nav > li.active').removeClass('active')
+     $(this).parent('li').addClass('active')
     });
   });
 </script>
+
+<script type="text/javascript">
+  $(function() {
+    $(".nav a").on("click", function(){
+     $(".nav").find(".active").removeClass("active");
+     $(this).parent().addClass("active");
+    });
+  });
+</script>
+
 
